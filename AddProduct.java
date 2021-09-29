@@ -60,7 +60,7 @@ public class AddProduct implements ActionListener {
         addprt.addActionListener(this);
         prt.add(addprt);
 
-        btnBack = new JButton("Back to Dashboard");
+        btnBack = new JButton("Exit");
         btnBack.setBounds(200,190,150,20);
         btnBack.addActionListener(this);
         prt.add(btnBack);
