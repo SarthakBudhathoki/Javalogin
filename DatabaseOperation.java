@@ -1,7 +1,9 @@
 package Demo;
-
-import java.sql.*;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 public class DatabaseOperation {
     Connection conn;
     Statement stmt;
@@ -34,6 +36,31 @@ public class DatabaseOperation {
         }
         return val;
     }
+
+    public ResultSet select(String query){
+        try {
+            row1 = stmt.executeQuery(query);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row1;
+    }
+    public int executeDelete(String query) {
+        try {
+            values=stmt.executeUpdate(query);
+        }
+        catch(SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        // TODO Auto-generated method stub
+        return values;
+    }
+
+
+    public static void main(String[] args) {
+        new DatabaseOperation();
+    }
+}
 
     public ResultSet select(String query){
         try {
